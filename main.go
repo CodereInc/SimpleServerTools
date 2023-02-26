@@ -50,7 +50,6 @@ func check_status() {
 	json.Unmarshal([]byte(body), &result)
 	//输出结果
 	fmt.Println("IP:", result["ip"])
-	//如果json包含bogen字段，则输出
 	if result["bogon"] != nil {
 		fmt.Println("这是一个本地IP!")
 	} else {
@@ -64,7 +63,6 @@ func check_status() {
 			fmt.Println("使用Anycast:", result["anycast"])
 		}
 	}
-	//向该URL发送请求，ua使用：SimpleServerTools/Dev，记录响应时间
 	timer := time.Now()
 	req, err := http.NewRequest("GET", "http://"+url, nil)
 	if err != nil {
