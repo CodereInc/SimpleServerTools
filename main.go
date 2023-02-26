@@ -64,7 +64,6 @@ func check_status() {
 			fmt.Println("使用Anycast:", result["anycast"])
 		}
 	}
-	//向该URL发送请求，ua使用：SimpleServerTools/Dev，记录响应时间
 	timer := time.Now()
 	req, err := http.NewRequest("GET", "http://"+url, nil)
 	if err != nil {
