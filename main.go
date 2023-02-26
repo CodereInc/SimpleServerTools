@@ -40,7 +40,6 @@ func check_status() {
 		return
 	}
 	defer resp.Body.Close()
-	//读取返回的json
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		fmt.Println("Error:", err)
