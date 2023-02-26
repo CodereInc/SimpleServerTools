@@ -59,7 +59,7 @@ func check_status() {
 		fmt.Println("区域:", result["region"])
 		fmt.Println("国家:", result["country"])
 		fmt.Println("时区:", result["timezone"])
-		//如果json中包含anycast字段，则输出
+
 		if result["anycast"] != nil {
 			fmt.Println("使用Anycast:", result["anycast"])
 		}
