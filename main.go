@@ -72,7 +72,7 @@ func check_status() {
 		fmt.Println("Error:", err)
 		return
 	}
-	req.Header.Set("User-Agent", "SimpleServerTools/Dev")
+	req.Header.Set("User-Agent", "SimpleServerTools/0.1")
 	client := &http.Client{}
 	resp, err = client.Do(req)
 	if err != nil {
@@ -82,7 +82,6 @@ func check_status() {
 	defer resp.Body.Close()
 	stop_time := time.Since(timer)
 	fmt.Println("响应时间:", stop_time)
-	//输出结果
 	fmt.Println("状态码:", resp.StatusCode)
 	fmt.Println("服务器:", resp.Header.Get("Server"))
 	fmt.Println("标题:", resp.Header.Get("Title"))
@@ -210,6 +209,6 @@ func main() {
 	case 5:
 		os.Exit(0)
 	default:
-		fmt.Println("Error: Invalid choice")
+		fmt.Println("Error: 错误的选择")
 	}
 }
