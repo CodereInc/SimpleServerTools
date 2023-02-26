@@ -51,7 +51,6 @@ func check_status() {
 	json.Unmarshal([]byte(body), &result)
 	//输出结果
 	fmt.Println("IP:", result["ip"])
-	//如果json包含bogen字段，则输出
 	if result["bogon"] != nil {
 		fmt.Println("这是一个本地IP!")
 	} else {
